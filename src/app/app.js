@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 
 app.get('/', (req, res) => {
-    res.status(200).json({mensaje: 'Bienvenido a la API de Node.js'});
+    res.status(200).json({mensaje: 'Hola esta es mi API'});
 });
 
 module.exports = app;
