@@ -14,8 +14,8 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 
-app.get('/', (req, res) => {
-    res.status(200).json({mensaje: 'Hola esta es mi API'});
-});
+const userRouter = require ('../router/user')
+
+app.use('user', userRouter);
 
 module.exports = app;
