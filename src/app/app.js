@@ -1,6 +1,9 @@
 const express = require ('express');
 const cors = require ('cors');
 const morgan = require('morgan');
+const userRouter = require ('../router/user');
+const { dbConnection } = require('../db/connection');
+
 
 const app = express();
 const corsoptions = {
@@ -14,8 +17,10 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 
-const userRouter = require ('../router/user')
 
-app.use('user', userRouter);
+
+dbConnection();
+
+app.use('/user', userRouter);
 
 module.exports = app;
