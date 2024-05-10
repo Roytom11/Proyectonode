@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true}));
 
 
 
-//dbConnection();
+dbConnection();
 
 app.use('/user', userRouter);
 

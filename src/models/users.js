@@ -17,11 +17,11 @@ const userSchema = new Schema({
         required: [true, 'Contraseña obligatoria'],
         trim: true,
     }, 
-}, {
-    
+}, {    
         collection: 'users',
         database: 'activosinformaticos',
-
-
-    
 });
+
+const Users = mongoose.model('users', userSchema);
+
+module.exports = { Users };

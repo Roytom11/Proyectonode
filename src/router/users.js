@@ -1,5 +1,5 @@
 const express = require('express');
-const { getUsers} = require('../controller/user')
+const { getUsers, newUser } = require('../controller/users')
 const router = express.Router();
 router.get('/', getUsers);
 console.log(getUsers);
@@ -11,8 +11,8 @@ console.log(getUsers);
 //const { id } = req.params;
 router.get('/:id', (req, res) => {
     const { id } = req.params;
-
 });
+
 
 
 module.exports = router;  
