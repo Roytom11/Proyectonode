@@ -1,7 +1,7 @@
 const express = require ('express');
 const cors = require ('cors');
 const morgan = require('morgan');
-const userRouter = require ('../router/user');
+const userRouter = require ('../router/user.js');
 const { dbConnection } = require('../db/connection');
 
 
@@ -19,8 +19,9 @@ app.use(express.urlencoded({ extended: true}));
 
 
 
-dbConnection();
+//dbConnection();
 
 app.use('/user', userRouter);
+
 
 module.exports = app;
